@@ -1,24 +1,26 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta name="description" content="Ls Social Midia - Uma rede social moderna e elegante" />
-    
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Meta tags para redes sociais -->
-    <meta property="og:title" content="Ls Social Midia" />
-    <meta property="og:description" content="Uma rede social moderna e elegante" />
-    <meta property="og:type" content="website" />
-    
-    <title>Ls Social Midia</title>
-  </head>
-  <body>
-    <noscript>Você precisa habilitar JavaScript para executar este app.</noscript>
-    <div id="root"></div>
-  </body>
-</html>
+<div class="bg-white rounded-lg shadow p-4 fade-in">
+    <div class="flex items-center space-x-3 mb-2">
+        <div class="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center">👤</div>
+        <div>
+            <p class="font-semibold text-gray-800">Você</p>
+            <p class="text-sm text-gray-500">@voce</p>
+        </div>
+    </div>
+    <p class="text-gray-700">Texto do post aqui</p>
+
+    <!-- Botões -->
+    <div class="flex items-center justify-between mt-2 text-sm text-gray-500">
+        <button onclick="toggleComments(POST_ID)" class="hover:text-purple-600">💬 <span id="commentCount-POST_ID">0</span></button>
+        <button onclick="likePost(POST_ID)" id="likeBtn-POST_ID" class="hover:text-red-600">❤️ <span id="likeCount-POST_ID">0</span></button>
+        <button onclick="deletePost(POST_ID)" class="hover:text-gray-700">🗑️</button>
+    </div>
+
+    <!-- Seção de comentários -->
+    <div id="comments-POST_ID" class="hidden mt-3 space-y-2">
+        <div class="flex items-center space-x-2">
+            <input type="text" id="commentInput-POST_ID" class="flex-1 border rounded px-2 py-1 text-sm" placeholder="Escreva um comentário...">
+            <button onclick="addComment(POST_ID)" class="bg-purple-600 text-white text-sm px-3 py-1 rounded hover:bg-purple-700">Enviar</button>
+        </div>
+        <div id="commentList-POST_ID" class="mt-2 space-y-2"></div>
+    </div>
+</div>
